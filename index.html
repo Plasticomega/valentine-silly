@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cute Cat Valentine</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #cat-image {
+        width: 300px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #button-container {
+        margin-top: 20px;
+    }
+    button {
+  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+  background-size: 400% 400%;
+  animation: rainbow 10s ease-in-out infinite;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 350% 0%;
+  }
+}
+
+    
+</style>
+</head>
+<body>
+    <h1 id="question" style="display: none;">Will you be my valentine?</h1>
+    <img id="cat-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlkR7JDYQTnmWsg-8U9-QKPiZmkNSqe9f2LOx-Xug4EAvWRRCUJkhhYYGdXkq2GdvsE6s&usqp=CAU">
+    <p id="message"></p>
+    <div id="button-container">
+        <button id="startButton">Click here, pookie</button>
+        <button id="yesButton" style="display: none;">Yes</button>
+        <button id="noButton" style="display: none;">No</button>
+    </div>
+    
+    <script>
+        var catImage = document.getElementById("cat-image");
+        var message = document.getElementById("message");
+        var startButton = document.getElementById("startButton");
+        var yesButton = document.getElementById("yesButton");
+        var noButton = document.getElementById("noButton");
+        var question = document.getElementById("question");
+
+        function setCatMood(isHappy) {
+            if (isHappy) {
+                catImage.src = "happy-cat-happy-happy-cat.gif";
+                message.innerText = "Thank you! 😻";
+            } else {
+                catImage.src = "sadcat.jpg";
+                message.innerText = "You said no 😿";
+            }
+            // Hide the buttons after selection
+            yesButton.style.display = "none";
+            noButton.style.display = "none";
+        }
+
+        function handleStartButtonClick() {
+            startButton.style.display = "none";
+            question.style.display = "block";
+            yesButton.style.display = "inline-block";
+            noButton.style.display = "inline-block";
+        }
+
+        function handleYesClick() {
+            catImage.style.display = "block"; // Ensure cat image is visible after selection
+            setCatMood(true); // happy
+        }
+
+        function handleNoClick() {
+            catImage.style.display = "block"; // Ensure cat image is visible after selection
+            setCatMood(false); // sad
+        }
+
+        startButton.addEventListener("click", handleStartButtonClick);
+        yesButton.addEventListener("click", handleYesClick);
+        noButton.addEventListener("click", handleNoClick);
+    </script>
+</body>
+</html>
