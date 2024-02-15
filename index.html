@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cute Cat Valentine</title>
+<title>Jevan</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -43,13 +43,13 @@
 </style>
 </head>
 <body>
-    <h1 id="question" style="display: none;">Will you be my valentine?</h1>
+    <h1 id="question" style="display: none;">Jevlis ka?</h1>
     <img id="cat-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlkR7JDYQTnmWsg-8U9-QKPiZmkNSqe9f2LOx-Xug4EAvWRRCUJkhhYYGdXkq2GdvsE6s&usqp=CAU">
     <p id="message"></p>
     <div id="button-container">
         <button id="startButton">Click here, pookie</button>
-        <button id="yesButton" style="display: none;">Yes</button>
-        <button id="noButton" style="display: none;">No</button>
+        <button id="yesButton" style="display: none;">Ho</button>
+        <button id="noButton" style="display: none;">Nahi</button>
     </div>
     
     <script>
@@ -63,10 +63,10 @@
         function setCatMood(isHappy) {
             if (isHappy) {
                 catImage.src = "happy-cat-happy-happy-cat.gif";
-                message.innerText = "Thank you! 😻";
+                message.innerText = "Yaaayyyy!!!!";
             } else {
                 catImage.src = "sadcat.jpg";
-                message.innerText = "You said no 😿";
+                message.innerText = "Jevun ghe plz...";
             }
             // Hide the buttons after selection
             yesButton.style.display = "none";
